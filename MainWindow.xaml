@@ -1,0 +1,183 @@
+﻿<Window x:Class="SinP2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SinP2"
+        
+        Height="700" 
+        Width="1000"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        MaxHeight="700" 
+        MaxWidth="1000"
+        >
+    <Window.Background>
+        <SolidColorBrush Opacity="0.8" Color="#000000"/>
+    </Window.Background>
+
+    <Grid>
+        <Rectangle Fill="Black" 
+                   HorizontalAlignment="Stretch" 
+                   Height="25"  Stroke="Black" 
+                   VerticalAlignment="Top"/>
+        <Button x:Name="ExitBtn"
+                BorderThickness="0"
+                Width="25"
+                Height="25"
+                Style="{StaticResource ExitBtnStyle}"  
+                Margin="975,0,0,675" Click="ExitBtn_Click">
+
+            <Button.Background>
+
+                <ImageBrush ImageSource="Assets\Exit.png"
+                            RenderOptions.BitmapScalingMode="HighQuality"/>
+
+            </Button.Background>
+
+        </Button>
+
+
+        <Button x:Name="MinimizeBtn"
+                BorderThickness="0"
+                Width="25"
+                Style="{StaticResource MinimizeBtnStyle}" 
+                Margin="950,0,25,677" Click="MinimizeBtn_Click">
+
+            <Button.Background>
+
+                <ImageBrush ImageSource="Assets\Minimize.png"
+                            RenderOptions.BitmapScalingMode="HighQuality"/>
+
+            </Button.Background>
+
+        </Button>
+        <Label Content="SinP" 
+               HorizontalAlignment="Left"
+               Margin="4,-6,0,0" 
+               VerticalAlignment="Top" 
+               Height="34" 
+               Width="72" Background="#00000000" 
+               Foreground="#FFDADADA" FontSize="25" FontFamily="BankGothic Lt BT" FontWeight="Bold"/>
+
+        <StackPanel Margin="0,61,879,90">
+
+            <Label x:Name="ComputerName"
+                       Content="NAME"
+                   Height="70"
+                   HorizontalAlignment="Stretch"
+                   VerticalAlignment="Top" Foreground="White"
+                   Margin="10,10,0,10" FontSize="24" FontFamily="BankGothic Lt BT"/>
+            <Label Content="OS"
+                   Width="212"
+                   Height="70"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top" Foreground="White"
+                   Margin="10,10,0,10" FontSize="24" FontFamily="BankGothic Lt BT"
+                   />
+            <Label Content="CPU"
+                   Width="212"
+                   Height="70"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top" Foreground="White"
+                   Margin="10,10,0,10" FontSize="24" FontFamily="BankGothic Lt BT"
+                   />
+            <Label Content="GPU"
+                   Width="212"
+                   Height="70"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top" Foreground="White"
+                   Margin="10,10,0,10" FontSize="24" FontFamily="BankGothic Lt BT"
+                   />
+            <Label Content="RAM"
+                   Width="212"
+                   Height="70"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top" Foreground="White"
+                   Margin="10,10,0,10" FontSize="24" FontFamily="BankGothic Lt BT"
+                   />
+            <Label Content="DRIVES"
+                   Width="212"
+                   Height="70"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top" Foreground="White"
+                   Margin="10,10,0,10" FontSize="24" FontFamily="BankGothic Lt BT"
+                   />
+        </StackPanel>
+        <StackPanel 
+            HorizontalAlignment="Left" 
+            Height="513" 
+            Margin="126,57,0,0" 
+            VerticalAlignment="Top" 
+            Width="864"            
+            >
+            <ScrollViewer x:Name="CName"
+                   Height="70"
+                   HorizontalAlignment="Stretch"
+                   VerticalAlignment="Bottom" Foreground="White"
+                   Margin="10,20,0,10" FontSize="20" FontFamily="BankGothic Lt BT"
+                          HorizontalScrollBarVisibility="Hidden"
+                          VerticalScrollBarVisibility="Hidden"/>
+
+            <ScrollViewer x:Name="OSName"
+                   Height="70"
+                   HorizontalAlignment="Stretch"
+                   VerticalAlignment="Top" Foreground="White"
+                   Margin="10,10,0,10" FontSize="20" FontFamily="BankGothic Lt BT"
+                          HorizontalScrollBarVisibility="Hidden"
+                          VerticalScrollBarVisibility="Hidden"/>
+
+            <ScrollViewer x:Name="ProcessorName"
+                   Height="70"
+                   HorizontalAlignment="Stretch"
+                   VerticalAlignment="Top" Foreground="White"
+                   Margin="10,10,0,10" FontSize="20" FontFamily="BankGothic Lt BT"
+                          HorizontalScrollBarVisibility="Hidden"
+                          VerticalScrollBarVisibility="Hidden"/>
+
+            <ScrollViewer x:Name="GraphicName"
+                   Height="70"
+                   HorizontalAlignment="Stretch"
+                   VerticalAlignment="Top" Foreground="White"
+                   Margin="10,10,0,10" FontSize="20" FontFamily="BankGothic Lt BT"
+                          HorizontalScrollBarVisibility="Hidden"
+                          VerticalScrollBarVisibility="Hidden"/>
+
+            <ScrollViewer x:Name="RAMName"
+                   Height="70"
+                   HorizontalAlignment="Stretch"
+                   VerticalAlignment="Top" Foreground="White"
+                   Margin="10,10,0,10" FontSize="20" FontFamily="BankGothic Lt BT"
+                          HorizontalScrollBarVisibility="Hidden"
+                          VerticalScrollBarVisibility="Hidden"/>
+
+            <ScrollViewer x:Name="DriveName"
+                   Height="70"
+                   HorizontalAlignment="Stretch"
+                   VerticalAlignment="Top" Foreground="White"
+                   Margin="10,12,0,10" FontSize="20" FontFamily="BankGothic Lt BT"
+                          HorizontalScrollBarVisibility="Hidden"
+                          VerticalScrollBarVisibility="Hidden"/>
+        </StackPanel>
+        <Label x:Name="CpuUsage"
+               HorizontalAlignment="Left" 
+               Margin="171,606,0,0" 
+               Foreground="White"
+               VerticalAlignment="Top" 
+               FontSize="42" FontFamily="BankGothic Lt BT"
+               Height="84" Width="297"/>
+        <ProgressBar 
+            x:Name="progress"
+            HorizontalAlignment="Left" 
+            Height="36" Margin="473,614,0,0" 
+            VerticalAlignment="Top" Width="426"
+            Background="Transparent"
+            Foreground="#FF06B025"
+            Maximum="100" BorderBrush="Transparent"
+            >
+        </ProgressBar>
+
+
+    </Grid>
+</Window>
